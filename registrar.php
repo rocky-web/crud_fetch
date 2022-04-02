@@ -1,27 +1,38 @@
 <?php
 if (isset($_POST)) {
-    $codigo = $_POST['codigo'];
-    $producto = $_POST['producto'];
-    $precio = $_POST['precio'];
-    $cantidad = $_POST['cantidad'];
+    $autorizado = $_POST['autorizado'];
+    $rut = $_POST['rut'];
+    $nombre = $_POST['nombre'];
+    $apellidos = $_POST['apellidos'];
+    $empresa = $_POST['empresa'];
+    $seccion = $_POST['seccion'];
+    $patente = $_POST['patente'];
+    $observaciones = $_POST['observaciones'];
     require("conexion.php");
     if (empty($_POST['idp'])){
-        $query = $pdo->prepare("INSERT INTO productos (codigo, producto, precio, cantidad) VALUES (:cod, :pro, :pre, :cant)");
-        $query->bindParam(":cod", $codigo);
-        $query->bindParam(":pro", $producto);
-        $query->bindParam(":pre", $precio);
-        $query->bindParam(":cant", $cantidad);
+        $query = $pdo->prepare("INSERT INTO productos (autorizado, rut, nombre, apellidos, empresa, seccion, patente, observaciones) VALUES (:aut, :rut, :nom, :ape, :emp, :sec, :pat, :obs)");
+        $query->bindParam(":aut", $autorizado);
+        $query->bindParam(":rut", $rut);
+        $query->bindParam(":nom", $nombre);
+        $query->bindParam(":ape", $apellidos);
+        $query->bindParam(":emp", $empresa);
+        $query->bindParam(":sec", $seccion);
+        $query->bindParam(":pat", $patente);
+        $query->bindParam(":obs", $observaciones);
         $query->execute();
         $pdo = null;
         echo "ok";
     }else{
         $id = $_POST['idp'];
-        $query = $pdo->prepare("UPDATE productos SET codigo = :cod, producto = :pro, precio =:pre, cantidad = :cant WHERE id = :id");
-        $query->bindParam(":cod", $codigo);
-        $query->bindParam(":pro", $producto);
-        $query->bindParam(":pre", $precio);
-        $query->bindParam(":cant", $cantidad);
-        $query->bindParam("id", $id);
+        $query = $pdo->prepare("UPDATE productos SET autorizado = :aut, rut = :rut, nombre =:nom, apellidos = :ape, empresa = :emp, seccion = :sec, patente = :pat, observaciones = :obs WHERE id = :id");
+        $query->bindParam(":aut", $autorizado);
+        $query->bindParam(":rut", $rut);
+        $query->bindParam(":nom", $nombre);
+        $query->bindParam(":ape", $apellidos);
+        $query->bindParam(":emp", $empresa);
+        $query->bindParam(":sec", $seccion);
+        $query->bindParam(":pat", $patente);
+        $query->bindParam(":obs", $observaciones);
         $query->execute();
         $pdo = null;
         echo "modificado";

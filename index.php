@@ -17,28 +17,46 @@
         <div>
             <form action="" method="post" id="frm">
                 <div>
-                    <label for="">Codigo</label>
                     <input type="hidden" name="idp" id="idp" value="">
-                    <input type="text" name="codigo" id="codigo" placeholder="Codigo">
                 </div>
-                <div class="form-group">
-                    <label for="">Producto</label>
-                    <input type="text" name="producto" id="producto" placeholder="Descripción">
+                <div>
+                    <label for="">Autorizado</label>
+                    <input type="text" name="autorizado" id="autorizado" placeholder="Autorizado">
                 </div>
-                <div class="form-group">precio
-                    <label for="">Precio</label>
-                    <input type="text" name="precio" id="precio" placeholder="Precio">
+                <div>
+                    <label for="">Rut</label>
+                    <input type="text" name="rut" id="rut" placeholder="Rut">
                 </div>
-                <div class="form-group">
-                    <label for="">Cantidad</label>
-                    <input type="text" name="cantidad" id="cantidad" placeholder="cantidad">
+                <div>
+                    <label for="">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 </div>
-                <div class="form-group">
+                <div>
+                    <label for="">Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                </div>
+                <div>
+                    <label for="">Empresa</label>
+                    <input type="text" name="empresa" id="empresa" placeholder="Empresa">
+                </div>
+                <div>
+                    <label for="">Seccion</label>
+                    <input type="text" name="seccion" id="seccion" placeholder="Seccion">
+                </div>
+                <div>
+                    <label for="">Patente</label>
+                    <input type="text" name="patente" id="patente" placeholder="Patente">
+                </div>
+                <div>
+                    <label for="">Observaciones</label>
+                    <input type="text" name="observaciones" id="observaciones" placeholder="Observaciones">
+                </div>
+                <div>
                     <input type="button" value="Registrar" id="registrar">
                 </div>
             </form>
         </div>
-        
+
         <div>
             <div>
                 <form action="" method="post">
@@ -52,6 +70,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>Autorizado</th>
                         <th>Rut</th>
                         <th>Nombre</th>
                         <th>Apellidos</th>
