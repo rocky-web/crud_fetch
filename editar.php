@@ -6,4 +6,5 @@
     $query->execute();
     $resultado = $query->fetch(PDO::FETCH_ASSOC);
     echo json_encode($resultado);
+    
 ?>

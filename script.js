@@ -71,10 +71,14 @@ function Editar(id) {
         body: id
     }).then(response => response.json()).then(response => {
         idp.value = response.id;
-        codigo.value = response.codigo;
-        producto.value = response.producto;
-        precio.value = response.precio;
-        cantidad.value = response.cantidad;
+        autorizado.value = response.autorizado;
+        rut.value = response.rut;
+        nombre.value = response.nombre;
+        apellidos.value = response.apellidos;
+        empresa.value = response.empresa;
+        seccion.value = response.seccion;
+        patente.value = response.patente;
+        observaciones.value = response.observaciones;
         registrar.value = "Actualizar"
     })
 }

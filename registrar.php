@@ -25,6 +25,7 @@ if (isset($_POST)) {
     }else{
         $id = $_POST['idp'];
         $query = $pdo->prepare("UPDATE productos SET autorizado = :aut, rut = :rut, nombre =:nom, apellidos = :ape, empresa = :emp, seccion = :sec, patente = :pat, observaciones = :obs WHERE id = :id");
+        $query->bindParam(":id", $id); //importante
         $query->bindParam(":aut", $autorizado);
         $query->bindParam(":rut", $rut);
         $query->bindParam(":nom", $nombre);
