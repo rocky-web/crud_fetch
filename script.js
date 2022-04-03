@@ -7,7 +7,9 @@ function ListarProductos(busqueda) {
         resultado.innerHTML = response;
     })
 }
-registrar.addEventListener("click", () => {
+
+
+function registrado(){
     fetch("registrar.php", {
         method: "POST",
         body: new FormData(frm)
@@ -34,7 +36,52 @@ registrar.addEventListener("click", () => {
             frm.reset();
         }
     })
+
+}
+
+registrar.addEventListener("click", () => {
+
+    if(rut.value === null || rut.value === ''){
+        rut.style.backgroundColor = "yellow";
+        rut.placeholder="Campo obligatorio";
+    }else if(rut.value !== null || rut.value !== ''){
+        rut.style.backgroundColor = "";
+        rut.placeholder="";
+    }
+    if(nombre.value === null || nombre.value === ''){
+        nombre.style.backgroundColor = "yellow";
+        nombre.placeholder="Campo obligatorio";
+    }else if(nombre.value !== null || nombre.value !== ''){
+        nombre.style.backgroundColor = "";
+        nombre.placeholder="";
+    }
+    if(apellidos.value === null || apellidos.value === ''){
+        apellidos.style.backgroundColor = "yellow";
+        apellidos.placeholder="Campo obligatorio";
+    }else if(apellidos.value !== null || apellidos.value !== ''){
+        apellidos.style.backgroundColor = "";
+        apellidos.placeholder="";
+    }
+    if(empresa.value === null || empresa.value === ''){
+        empresa.style.backgroundColor = "yellow";
+        empresa.placeholder="Campo obligatorio";
+    }else if(empresa.value !== null || empresa.value !== ''){
+        empresa.style.backgroundColor = "";
+        empresa.placeholder="";
+    }
+
+    if(rut.value !== null && rut.value !== '' && nombre.value !== null && nombre.value !== '' && apellidos.value !== null && apellidos.value !== '' && empresa.value !== null && empresa.value !== ''){
+        rut.placeholder="Rut";
+        nombre.placeholder="Nombre";
+        apellidos.placeholder="Apellidos";
+        empresa.placeholder="Empresa";
+        registrado();
+
+    }
+    
+    
 });
+
 function Eliminar(id) {
     Swal.fire({
         title: 'Esta seguro de eliminar?',

@@ -31,12 +31,12 @@
                     <input type="radio" name="autorizado" id="autorizado" value="no">
                 </div>
                 <div>
-                    <label for="">Rut</label>
+                    <label for="rut">Rut</label>
                     <!-- no funciona required -->
                     <input type="text" name="rut" id="rut" placeholder="Rut" maxlength="12" onkeydown="noPuntoComa(event)">
                 </div>
                 <div>
-                    <label for="">Nombre</label>
+                    <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 </div>
                 <div>
@@ -44,19 +44,19 @@
                     <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
                 </div>
                 <div>
-                    <label for="">Empresa</label>
+                    <label for="empresa">Empresa</label>
                     <input type="text" name="empresa" id="empresa" placeholder="Empresa">
                 </div>
                 <div>
-                    <label for="">Seccion</label>
+                    <label for="seccion">Seccion</label>
                     <input type="text" name="seccion" id="seccion" placeholder="Seccion">
                 </div>
                 <div>
-                    <label for="">Patente</label>
+                    <label for="patente">Patente</label>
                     <input type="text" name="patente" id="patente" placeholder="Patente">
                 </div>
                 <div>
-                    <label for="">Observaciones</label>
+                    <label for="observaciones">Observaciones</label>
                     <input type="text" name="observaciones" id="observaciones" placeholder="Observaciones">
                 </div>
                 <div>
