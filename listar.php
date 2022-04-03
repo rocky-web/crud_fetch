@@ -4,7 +4,7 @@ require "conexion.php";
 $consulta = $pdo->prepare("SELECT * FROM productos ORDER BY id DESC");
 $consulta->execute();
 if ($data != "") {
-    $consulta = $pdo->prepare("SELECT * FROM productos WHERE rut LIKE '%".$data."%' OR nombre LIKE '%".$data."%'");
+    $consulta = $pdo->prepare("SELECT * FROM productos WHERE rut LIKE '%".$data."%' OR nombre LIKE '%".$data."%' OR apellidos LIKE '%".$data."%' OR concat(nombre,' ',apellidos) LIKE '%".$data."%' ");
     $consulta->execute();
 }
 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD php - API fetch</title>
+    <title>Registro de contratistas</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 </head>
 
@@ -19,20 +19,28 @@
                 <div>
                     <input type="hidden" name="idp" id="idp" value="">
                 </div>
-                <div>
+                <!-- <div>
                     <label for="">Autorizado</label>
                     <input type="text" name="autorizado" id="autorizado" placeholder="Autorizado">
+                </div> -->
+                <div>
+                    <label for="">Autorizado</label>
+                    <label for="">si</label>
+                    <input type="radio" name="autorizado" id="autorizado" value="si" checked>
+                    <label for="">no</label>
+                    <input type="radio" name="autorizado" id="autorizado" value="no">
                 </div>
                 <div>
                     <label for="">Rut</label>
-                    <input type="text" name="rut" id="rut" placeholder="Rut">
+                    <!-- no funciona required -->
+                    <input type="text" name="rut" id="rut" placeholder="Rut" maxlength="12" onkeydown="noPuntoComa(event)">
                 </div>
                 <div>
                     <label for="">Nombre</label>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 </div>
                 <div>
-                    <label for="">Apellidos</label>
+                    <label for="apellidos">Apellidos</label>
                     <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
                 </div>
                 <div>
@@ -87,6 +95,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="script2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
