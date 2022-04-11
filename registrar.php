@@ -9,6 +9,7 @@ if (isset($_POST)) {
     $patente = $_POST['patente'];
     $observaciones = $_POST['observaciones'];
     require("conexion.php");
+    
     if (empty($_POST['idp'])){
         $query = $pdo->prepare("INSERT INTO productos (autorizado, rut, nombre, apellidos, empresa, seccion, patente, observaciones) VALUES (:aut, :rut, :nom, :ape, :emp, :sec, :pat, :obs)");
         $query->bindParam(":aut", $autorizado);

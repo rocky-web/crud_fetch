@@ -1,0 +1,7 @@
+SELECT COUNT(*) total_repetidos, nombre FROM productos GROUP BY nombre HAVING total_repetidos > 1;
+
+-detectar si el nombre anais esta repetido
+SELECT COUNT(*) total_repetidos, nombre FROM productos WHERE nombre='anais' GROUP BY nombre HAVING total_repetidos > 1;
+
+SELECT nombre, IF (nombre = 'anais', 'esta repetido', 'no esta repetido') FROM productos ORDER BY nombre;
+
