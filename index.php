@@ -23,6 +23,9 @@
                     <label for="">Autorizado</label>
                     <input type="text" name="autorizado" id="autorizado" placeholder="Autorizado">
                 </div> -->
+
+                <div id="respuesta"></div>
+
                 <div>
                     <label for="">Autorizado</label>
                     <label for="">si</label>
@@ -93,6 +96,8 @@
             </table>
         </div>
     </div>
+
+    
 
     <script src="script.js"></script>
     <script src="script2.js"></script>

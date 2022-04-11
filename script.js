@@ -10,6 +10,7 @@ function ListarProductos(busqueda) {
 
 
 function registrado(){
+    
     fetch("registrar.php", {
         method: "POST",
         body: new FormData(frm)
@@ -75,7 +76,28 @@ registrar.addEventListener("click", () => {
         nombre.placeholder="Nombre";
         apellidos.placeholder="Apellidos";
         empresa.placeholder="Empresa";
-        registrado();
+
+        var datos = new FormData(frm);
+        var respuesta = document.getElementById("respuesta");
+            
+        fetch('duplicado.php', {
+            method: 'POST',
+            body: datos
+        })
+    
+        .then( res => res.json())
+        .then( data => {
+            console.log(data);
+            if(data === 'duplicado'){
+                respuesta.innerHTML = `<div>El rut ingresado ya existe</div>`
+                rut.style.backgroundColor = "red";
+            }else if(data === 'dato ok'){
+                respuesta.innerHTML = `<div></div>`
+                registrado(); 
+            }
+        })
+
+        
 
     }
     
