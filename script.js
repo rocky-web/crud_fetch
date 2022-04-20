@@ -42,6 +42,8 @@ function registrado(){
 
 registrar.addEventListener("click", () => {
 
+    rut.style.cssText = 'pointer-events: false';
+
     if(rut.value === null || rut.value === ''){
         rut.style.backgroundColor = "yellow";
         rut.placeholder="Campo obligatorio";
@@ -144,7 +146,7 @@ function Editar(id) {
     }).then(response => response.json()).then(response => {
         idp.value = response.id;
         autorizado.value = response.autorizado;
-        rut.value = response.rut;
+        rut.value = response.rut; rut.style.cssText = 'background-color: gray; color: white; pointer-events: none';
         nombre.value = response.nombre;
         apellidos.value = response.apellidos;
         empresa.value = response.empresa;

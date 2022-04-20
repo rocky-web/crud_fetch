@@ -14,15 +14,19 @@
         <div>
             <h3>Registro de contratistas</h3>
         </div>
+        
+        <?php 
+            require_once "conexion.php";
+            $sentencia = $pdo->prepare("SELECT * FROM productos");
+            $sentencia->execute();
+            echo "total de registros: ".$sentencia->rowCount();
+        ?>
+
         <div>
             <form action="" method="post" id="frm">
                 <div>
                     <input type="hidden" name="idp" id="idp" value="">
                 </div>
-                <!-- <div>
-                    <label for="">Autorizado</label>
-                    <input type="text" name="autorizado" id="autorizado" placeholder="Autorizado">
-                </div> -->
 
                 <div id="respuesta"></div>
 
