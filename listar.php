@@ -9,9 +9,15 @@ if ($data != "") {
 }
 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
 foreach ($resultado as $data) {
-    echo "<tr>
-            <td>" . $data['autorizado'] . "</td>
-            <td>" . $data['rut'] . "</td>
+    echo "<tr>";
+    if($data['autorizado']=="no"){
+        echo "<td style='background-color:red; color: white'>" . $data['autorizado'] . "</td>";
+
+    }else if($data['autorizado']=="si"){
+        echo "<td style='background-color:green; color: white'>" . $data['autorizado'] . "</td>";
+    }
+    
+      echo "<td>" . $data['rut'] . "</td>
             <td>" . $data['nombre'] . "</td>
             <td>" . $data['apellidos'] . "</td>
             <td>" . $data['empresa'] . "</td>
