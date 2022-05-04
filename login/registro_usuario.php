@@ -13,6 +13,8 @@
     <input type="password" name="contrasena_registro" id="">
     <button type="submit">Registrar</button>
 </form>
+
+<a href="inicio_sesion.php">Ir a Inicio de Sesion</a>
     
 </body>
 </html>
