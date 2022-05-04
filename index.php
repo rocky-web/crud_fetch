@@ -17,7 +17,7 @@
         
         <?php 
             require_once "conexion.php";
-            $sentencia = $pdo->prepare("SELECT * FROM productos");
+            $sentencia = $pdo->prepare("SELECT * FROM personas");
             $sentencia->execute();
             echo "total de registros: ".$sentencia->rowCount();
         ?>

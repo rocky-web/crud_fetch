@@ -3,7 +3,7 @@
     
     $rut = $_POST['rut'];
     
-    $sql = "SELECT * FROM productos WHERE rut='$rut'"; //dato que ingreso la persona
+    $sql = "SELECT * FROM personas WHERE rut='$rut'"; //dato que ingreso la persona
     $query = $pdo -> prepare($sql); 
     $query -> execute(); 
     $results = $query -> fetchAll(PDO::FETCH_OBJ); 

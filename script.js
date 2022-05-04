@@ -1,5 +1,5 @@
-ListarProductos();
-function ListarProductos(busqueda) {
+ListarPersonas();
+function ListarPersonas(busqueda) {
     fetch("listar.php", {
         method: "POST",
         body: busqueda
@@ -23,7 +23,7 @@ function registrado(){
                 timer: 1500
             })
             frm.reset();
-            ListarProductos();
+            ListarPersonas();
         }else{
             Swal.fire({
                 icon: 'success',
@@ -33,7 +33,7 @@ function registrado(){
             })
             registrar.value = "Registrar";
             idp.value = "";
-            ListarProductos();
+            ListarPersonas();
             frm.reset();
         }
     })
@@ -125,7 +125,7 @@ function Eliminar(id) {
                 body: id
             }).then(response => response.text()).then(response => {
                 if (response == "ok") {
-                   ListarProductos();
+                   ListarPersonas();
                    Swal.fire({
                        icon: 'success',
                        title: 'Eliminado',
@@ -159,8 +159,8 @@ function Editar(id) {
 buscar.addEventListener("keyup", () => {
     const valor = buscar.value;
     if (valor == "") {
-        ListarProductos();
+        ListarPersonas();
     }else{
-        ListarProductos(valor);
+        ListarPersonas(valor);
     }
 });

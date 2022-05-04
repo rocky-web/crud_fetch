@@ -1,10 +1,10 @@
 <?php
 $data = file_get_contents("php://input");
 require "conexion.php";
-$consulta = $pdo->prepare("SELECT * FROM productos ORDER BY id DESC LIMIT 10 ");
+$consulta = $pdo->prepare("SELECT * FROM personas ORDER BY id DESC LIMIT 10 ");
 $consulta->execute();
 if ($data != "") {
-    $consulta = $pdo->prepare("SELECT * FROM productos WHERE rut LIKE '%".$data."%' OR nombre LIKE '%".$data."%' OR apellidos LIKE '%".$data."%' OR concat(nombre,' ',apellidos) LIKE '%".$data."%' ");
+    $consulta = $pdo->prepare("SELECT * FROM personas WHERE rut LIKE '%".$data."%' OR nombre LIKE '%".$data."%' OR apellidos LIKE '%".$data."%' OR concat(nombre,' ',apellidos) LIKE '%".$data."%' ");
     $consulta->execute();
 }
 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);

@@ -11,7 +11,7 @@ if (isset($_POST)) {
     require("conexion.php");
     
     if (empty($_POST['idp'])){
-        $query = $pdo->prepare("INSERT INTO productos (autorizado, rut, nombre, apellidos, empresa, seccion, patente, observaciones) VALUES (:aut, :rut, :nom, :ape, :emp, :sec, :pat, :obs)");
+        $query = $pdo->prepare("INSERT INTO personas (autorizado, rut, nombre, apellidos, empresa, seccion, patente, observaciones) VALUES (:aut, :rut, :nom, :ape, :emp, :sec, :pat, :obs)");
         $query->bindParam(":aut", $autorizado);
         $query->bindParam(":rut", $rut);
         $query->bindParam(":nom", $nombre);
@@ -25,7 +25,7 @@ if (isset($_POST)) {
         echo "ok";
     }else{
         $id = $_POST['idp'];
-        $query = $pdo->prepare("UPDATE productos SET autorizado = :aut, rut = :rut, nombre =:nom, apellidos = :ape, empresa = :emp, seccion = :sec, patente = :pat, observaciones = :obs WHERE id = :id");
+        $query = $pdo->prepare("UPDATE personas SET autorizado = :aut, rut = :rut, nombre =:nom, apellidos = :ape, empresa = :emp, seccion = :sec, patente = :pat, observaciones = :obs WHERE id = :id");
         $query->bindParam(":id", $id); //importante
         $query->bindParam(":aut", $autorizado);
         $query->bindParam(":rut", $rut);

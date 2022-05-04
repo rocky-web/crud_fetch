@@ -1,0 +1,14 @@
+- nombre base de datos: crudfetch
+- cotejamiento: utf8_spanish_ci 
+- nombre tabla: personas
+
+campos:
+- id (int 11) primary key - autoincrementable
+- autorizado (varchar 5)
+- rut (varchar 20)
+- nombre (varchar 30)
+- apellidos (varchar 50)
+- empresa (varchar 30)
+- seccion (varchar 20)
+- patente (varchar 11)
+- observaciones (varchar 50)
