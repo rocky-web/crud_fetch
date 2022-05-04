@@ -9,8 +9,19 @@
 <body>
 <h1>Registro de usuario</h1>
 <form action="registro.php" method="post">
-    <input type="text" name="nombre_registro" id="">
-    <input type="password" name="contrasena_registro" id="">
+    <p>Seleccione usuario de tipo: Invitado o Administrador</p>
+    <div>
+        <label for="inv">Invitado</label>
+        <input type="radio" name="tipo_usuario" id="inv" value="invitado" checked>
+        <label for="adm">Administrador</label>
+        <input type="radio" name="tipo_usuario" id="adm" value="administrador">
+    </div>
+    <label for="nom_usu">Nombre usuario: </label>
+    <input type="text" name="nombre_registro" id="nom_usu">
+    <label for="con_1">Contraseña: </label>
+    <input type="password" name="contrasena_registro" id="con_1">
+    <label for="con_2">Repita contraseña: </label>
+    <input type="password" name="contrasena_registro_2" id="con_2">
     <button type="submit">Registrar</button>
 </form>
 

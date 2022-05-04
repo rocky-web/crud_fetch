@@ -9,8 +9,10 @@
 <body>
 <h1>Iniciar Sesion</h1>
 <form action="login.php" method="post">
-    <input type="text" name="nombre_login" id="">
-    <input type="password" name="contrasena_login" id="">
+    <label for="nom_log">Usuario: </label>
+    <input type="text" name="nombre_login" id="nom_log">
+    <label for="con_log">Contraseña: </label>
+    <input type="password" name="contrasena_login" id="con_log">
     <button type="submit">Iniciar Sesion</button>
 </form>
 
