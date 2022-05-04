@@ -1,0 +1,6 @@
+nombre de tabla: usuarios_crudfetch
+
+campos: 
+id (int) autoincrementable
+nombre (varchar) 255
+contrasena (varchar) 255
