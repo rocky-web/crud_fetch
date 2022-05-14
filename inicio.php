@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['adm'])){
+        echo 'bienvenido! ' . $_SESSION['adm'];
+        echo '<br><a href="login/cerrar.php">Cerrar Sesion</a>';
+    }else{
+        header('Location: login/inicio_sesion.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 

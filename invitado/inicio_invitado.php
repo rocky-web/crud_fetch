@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['inv'])){
+        echo 'bienvenido! ' . $_SESSION['inv'];
+        echo '<br><a href="../login/cerrar.php">Cerrar Sesion</a>';
+    }else{
+        header('Location: ../login/inicio_sesion.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -31,10 +31,14 @@ echo '<pre>';
 var_dump($resultado['contrasena']);// recojemos contraseña desde la base de datos
 echo '</pre>';
 
-if(password_verify($contrasena_login, $resultado['contrasena'])){
+if(password_verify($contrasena_login, $resultado['contrasena']) && $resultado['tipo']=='invitado'){
     // las contraseñas son iguales
-    $_SESSION['admin']= $usuario_login;
-    header('Location: pagina.html');
+    $_SESSION['inv']= $usuario_login;
+    header('Location: ../invitado/inicio_invitado.php');
+}else if(password_verify($contrasena_login, $resultado['contrasena']) && $resultado['tipo']=='administrador'){
+    $_SESSION['adm']= $usuario_login;
+    header('Location: ../inicio.php');
+
 }else{
     echo 'no son iguales las contraseñas';
     die();
