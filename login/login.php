@@ -24,7 +24,12 @@ echo '</pre>';
 
 if(!$resultado){
     echo "usuario no existe";
+    // die();
+    session_start();
+    $_SESSION['info'] = "usuario no existe";
+    header('Location: inicio_sesion.php');
     die();
+
 }
 
 echo '<pre>';
@@ -41,6 +46,10 @@ if(password_verify($contrasena_login, $resultado['contrasena']) && $resultado['t
 
 }else{
     echo 'no son iguales las contraseñas';
+    // die();
+    session_start();
+    $_SESSION['info'] = "no son iguales las contraseñas";
+    header('Location: inicio_sesion.php');
     die();
 }
 

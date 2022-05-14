@@ -1,3 +1,10 @@
+<?php
+    error_reporting(0);
+    session_start();
+    echo $_SESSION['info'];
+    $_SESSION['info']='';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +33,7 @@
 </form>
 
 <a href="inicio_sesion.php">Ir a Inicio de Sesion</a>
+
     
 </body>
 </html>

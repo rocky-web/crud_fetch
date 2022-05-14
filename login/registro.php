@@ -17,6 +17,9 @@ $resultado = $sentencia->fetch();
 # SI EXISTE USUAIRO MATAMOS LA OPERACION
 if($resultado){
     echo "<br>usuario ya existe";
+    session_start();
+    $_SESSION['info'] = "usuario ya existe";
+    header('Location: registro_usuario.php');
     die(); // matamos la operacion. Es como decir exit
 }
 
@@ -28,12 +31,20 @@ if(password_verify($contrasena2, $contrasena_hash)){ //funcion php para comparar
     $sentencia_agregar = $pdo->prepare($sql_agregar);
     if($sentencia_agregar->execute(array($usuario_nuevo, $contrasena_hash, $tipo_usuario))){//si esta linea se ejecuta nos devuelve true en caso contrario devuelve false
         echo "agregado";
+        session_start();
+        $_SESSION['info'] = "agregado";
+        header('Location: registro_usuario.php');
+        die();
     }
     
     $sentencia_agregar = null;
     $pdo = null;
 }else{
     echo "la contraseña no es valida";
+    session_start();
+    $_SESSION['info'] = "la contraseña no es valida";
+    header('Location: registro_usuario.php');
+    die();
 }
 
 ?>

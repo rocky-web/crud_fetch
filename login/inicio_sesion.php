@@ -1,3 +1,10 @@
+<?php
+    error_reporting(0);
+    session_start();
+     echo $_SESSION['info'];
+     $_SESSION['info']='';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +24,7 @@
 </form>
 
 <a href="registro_usuario.php">Ir a registro de usuario</a>
+
     
 </body>
 </html>
