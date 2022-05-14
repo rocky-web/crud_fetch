@@ -20,27 +20,27 @@
 
 ?>
 
-<form action="" method="post">
+<form id="frm">
     <label for="">Buscar</label>
-    <input type="text" placeholder="buscar">
+    <input type="text" name="buscar" id="buscar" placeholder="buscar" onkeyup="busqueda()">
 </form>
 
 <table>
     <thead>
         <tr>
-            <td>Autorizado</td>
-            <td>Rut</td>
-            <td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Empresa</td>
-            <td>Seccion</td>
-            <td>Patente</td>
-            <td>Observaciones</td>
+            <th>Autorizado</th>
+            <th>Rut</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Empresa</th>
+            <th>Seccion</th>
+            <th>Patente</th>
+            <th>Observaciones</th>
         </tr>
     </thead>
     
-    <tbody>
-        <?php
+    <tbody id="mostrar">
+       <!--  <?php
             foreach($resultado as $data){
                 echo "<tr><td>".$data['autorizado']."</td>
                 <td>".$data['rut']."</td>
@@ -51,11 +51,35 @@
                 <td>".$data['patente']."</td>
                 <td>".$data['observaciones']."</td></tr>";
             }
-        ?>
+        ?> -->
     </tbody>
 </table>
 
 
+
+<script>
+    document.getElementById('frm').addEventListener('submit', function(e){
+        e.preventDefault();
+
+    })
+
+    var x = document.getElementById('buscar')
+
+    function busqueda(){
+        fetch('../listar_invitado.php',{
+            method: 'POST',
+            body: x.value
+        })
+        .then(res=>res.text())
+        .then(data=>{
+            // console.log(data)
+            document.getElementById('mostrar').innerHTML=data
+        })
+    }
+
+    busqueda();
     
+
+</script>
 </body>
 </html>

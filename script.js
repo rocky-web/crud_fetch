@@ -89,7 +89,7 @@ registrar.addEventListener("click", () => {
     
         .then( res => res.json())
         .then( data => {
-            console.log(data);
+            // console.log(data);
             if(data === 'duplicado' && registrar.value=='Registrar'){
                 respuesta.innerHTML = `<div>El rut ingresado ya existe</div>`
                 rut.style.backgroundColor = "red";

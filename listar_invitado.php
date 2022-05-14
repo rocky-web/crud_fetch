@@ -1,6 +1,7 @@
 <?php
 $data = file_get_contents("php://input");
 require "conexion.php";
+
 $consulta = $pdo->prepare("SELECT * FROM personas ORDER BY id DESC LIMIT 10 ");
 $consulta->execute();
 if ($data != "") {
@@ -23,11 +24,7 @@ foreach ($resultado as $data) {
             <td>" . $data['empresa'] . "</td>
             <td>" . $data['seccion'] . "</td>
             <td>" . $data['patente'] . "</td>
-            <td>" . $data['observaciones'] . "</td>
-            <td>
-                <button type='button' onclick=Editar('" . $data['id'] . "')>Editar</button>
-                <button type='button' onclick=Eliminar('" . $data['id'] . "')>Eliminar</button>
-            </td>        
+            <td>" . $data['observaciones'] . "</td>       
         </tr>";        
 }
 
