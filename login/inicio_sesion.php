@@ -23,8 +23,6 @@
     <button type="submit">Iniciar Sesion</button>
 </form>
 
-<a href="registro_usuario.php">Ir a registro de usuario</a>
 
-    
 </body>
 </html>

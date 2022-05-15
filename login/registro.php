@@ -23,6 +23,19 @@ if($resultado){
     die(); // matamos la operacion. Es como decir exit
 }
 
+$usu = strlen($usuario_nuevo);
+$con = strlen($contrasena);
+// $con2 = strlen($contrasena2);
+
+if($usu < 4 || $con < 4){
+
+    session_start();
+    $_SESSION['info']="usuario y contraseña debe contener más de 4 caracteres";
+    header('Location: registro_usuario.php');
+    die();
+
+}
+
 # HASH DE CONTRASEÑA
 if(password_verify($contrasena2, $contrasena_hash)){ //funcion php para comparar si la contraseña 1 con la contraseña 2 son iguales. Importante: 1er parametro pass sin encriptar y 2do parametro pass encriptado
     echo "la contraseña es valida</br>";
@@ -30,9 +43,9 @@ if(password_verify($contrasena2, $contrasena_hash)){ //funcion php para comparar
     $sql_agregar = 'INSERT INTO usuarios_crudfetch (nombre, contrasena, tipo) values (?,?,?)';
     $sentencia_agregar = $pdo->prepare($sql_agregar);
     if($sentencia_agregar->execute(array($usuario_nuevo, $contrasena_hash, $tipo_usuario))){//si esta linea se ejecuta nos devuelve true en caso contrario devuelve false
-        echo "agregado";
+        // echo "agregado";
         session_start();
-        $_SESSION['info'] = "agregado";
+        $_SESSION['info'] = "usuario y contraseña guardado exitozamente";
         header('Location: registro_usuario.php');
         die();
     }
@@ -40,9 +53,9 @@ if(password_verify($contrasena2, $contrasena_hash)){ //funcion php para comparar
     $sentencia_agregar = null;
     $pdo = null;
 }else{
-    echo "la contraseña no es valida";
+    // echo "la contraseña no es valida o no coinciden";
     session_start();
-    $_SESSION['info'] = "la contraseña no es valida";
+    $_SESSION['info'] = "la contraseña no es valida o no coinciden";
     header('Location: registro_usuario.php');
     die();
 }

@@ -2,7 +2,17 @@
     error_reporting(0);
     session_start();
     echo $_SESSION['info'];
+    echo '<br>';
     $_SESSION['info']='';
+
+    if(isset($_SESSION['adm'])){
+        echo 'bienvenido! ' . $_SESSION['adm'];
+        echo '<br><a href="cerrar.php">Cerrar Sesion</a>';
+        echo '<br><a href="../inicio.php">Ir a Registro de contratistas</a>';
+    }else{
+        header('Location: inicio_sesion.php');
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +25,7 @@
 </head>
 <body>
 <h1>Registro de usuario</h1>
-<form action="registro.php" method="post">
+<form action="registro.php" method="post" id="frm">
     <p>Seleccione usuario de tipo: Invitado o Administrador</p>
     <div>
         <label for="inv">Invitado</label>
@@ -32,7 +42,6 @@
     <button type="submit">Registrar</button>
 </form>
 
-<a href="inicio_sesion.php">Ir a Inicio de Sesion</a>
 
     
 </body>

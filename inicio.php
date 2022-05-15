@@ -4,6 +4,7 @@
     if(isset($_SESSION['adm'])){
         echo 'bienvenido! ' . $_SESSION['adm'];
         echo '<br><a href="login/cerrar.php">Cerrar Sesion</a>';
+        echo '<br><a href="login/registro_usuario.php">Ir a Registro de usuarios</a>';
     }else{
         header('Location: login/inicio_sesion.php');
     }
@@ -111,8 +112,6 @@
             </table>
         </div>
     </div>
-
-    
 
     <script src="script.js"></script>
     <script src="script2.js"></script>

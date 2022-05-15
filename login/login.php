@@ -7,10 +7,10 @@ include_once "../conexion.php";
 $usuario_login = $_POST['nombre_login'];
 $contrasena_login = $_POST['contrasena_login'];
 
-echo '<pre>';
+/* echo '<pre>';
 var_dump($usuario_login);
 var_dump($contrasena_login);
-echo '</pre>';
+echo '</pre>'; */
 
 # VERIFICAR SI EL USUARIO EXISTE
 $sql = 'SELECT * FROM usuarios_crudfetch WHERE nombre = ?';
@@ -23,10 +23,9 @@ var_dump($resultado);
 echo '</pre>';
 
 if(!$resultado){
-    echo "usuario no existe";
-    // die();
+
     session_start();
-    $_SESSION['info'] = "usuario no existe";
+    $_SESSION['info'] = "Usuario no existe";
     header('Location: inicio_sesion.php');
     die();
 
@@ -45,10 +44,8 @@ if(password_verify($contrasena_login, $resultado['contrasena']) && $resultado['t
     header('Location: ../inicio.php');
 
 }else{
-    echo 'no son iguales las contraseñas';
-    // die();
     session_start();
-    $_SESSION['info'] = "no son iguales las contraseñas";
+    $_SESSION['info'] = "Contraseñas no es valida";
     header('Location: inicio_sesion.php');
     die();
 }
