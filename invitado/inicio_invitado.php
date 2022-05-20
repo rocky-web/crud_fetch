@@ -3,10 +3,22 @@
 
     if(isset($_SESSION['inv'])){
         echo 'bienvenido! ' . $_SESSION['inv'];
+        cantidad_usuarios();
         echo '<br><a href="../login/cerrar.php">Cerrar Sesion</a>';
     }else{
         header('Location: ../login/inicio_sesion.php');
     }
+
+    function cantidad_usuarios(){
+        require_once "../conexion.php";
+        $sentencia = $pdo->prepare("SELECT * FROM personas");
+        $sentencia->execute();
+        echo "<br>total de registros: ".$sentencia->rowCount();
+        $resultado = $sentencia->fetchAll();
+        // print_r($resultado);
+    }
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -15,21 +27,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Búsqueda de contratistas</title>
 </head>
 <body>
 
-<?php 
-    require_once "../conexion.php";
-    $sentencia = $pdo->prepare("SELECT * FROM personas");
-    $sentencia->execute();
-    echo "total de registros: ".$sentencia->rowCount();
 
-    $resultado = $sentencia->fetchAll();
-    // print_r($resultado);
-
-?>
-
+<h3>Búsqueda de contratistas</h3>
 <form id="frm">
     <label for="">Buscar</label>
     <input type="text" name="buscar" id="buscar" placeholder="buscar" onkeyup="busqueda()">

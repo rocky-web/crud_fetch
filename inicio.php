@@ -3,10 +3,18 @@
 
     if(isset($_SESSION['adm'])){
         echo 'bienvenido! ' . $_SESSION['adm'];
+        cantidad_registros();
         echo '<br><a href="login/cerrar.php">Cerrar Sesion</a>';
         echo '<br><a href="login/registro_usuario.php">Ir a Registro de usuarios</a>';
     }else{
         header('Location: login/inicio_sesion.php');
+    }
+
+    function cantidad_registros(){
+        require_once "conexion.php";
+        $sentencia = $pdo->prepare("SELECT * FROM personas");
+        $sentencia->execute();
+        echo "<br>total de registros: ".$sentencia->rowCount();
     }
 ?>
 
@@ -26,13 +34,6 @@
         <div>
             <h3>Registro de contratistas</h3>
         </div>
-        
-        <?php 
-            require_once "conexion.php";
-            $sentencia = $pdo->prepare("SELECT * FROM personas");
-            $sentencia->execute();
-            echo "total de registros: ".$sentencia->rowCount();
-        ?>
 
         <div>
             <form action="" method="post" id="frm">
@@ -86,6 +87,7 @@
 
         <div>
             <div>
+                <h3>Búsqueda de contratistas</h3>
                 <form action="" method="post">
                     <div>
                         <label for="buscar">Buscar:</label>
