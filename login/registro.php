@@ -18,7 +18,7 @@ $resultado = $sentencia->fetch();
 if($resultado){
     echo "<br>usuario ya existe";
     session_start();
-    $_SESSION['info'] = "usuario ya existe";
+    $_SESSION['info'] = "Usuario ya existe";
     header('Location: registro_usuario.php');
     die(); // matamos la operacion. Es como decir exit
 }
@@ -30,7 +30,7 @@ $con = strlen($contrasena);
 if($usu < 4 || $con < 4){
 
     session_start();
-    $_SESSION['info']="usuario y contraseña debe contener más de 4 caracteres";
+    $_SESSION['info']="Usuario y Contraseña debe contener más de 4 caracteres";
     header('Location: registro_usuario.php');
     die();
 

@@ -1,0 +1,135 @@
+.fondo{
+    background-color: rgba(160, 167, 167, 0.733);
+    margin-left: 20px;
+
+}
+
+.formulario-registro-contratistas{
+    border: 2px solid;
+    border-color: black;
+    border-radius: 15px;
+    background-color: rgb(175, 175, 175);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    margin-top: 25px;
+    width: 290px;
+}
+
+
+.input-text label{
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+.tabla-listar{
+    background-color: rgb(175, 175, 175);
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 35px;
+}
+
+.tabla-listar th{
+    background: rgb(147, 147, 238);
+    border: solid 1px rgb(24, 110, 36);
+}
+
+.tabla-listar td{
+    border: solid 1px rgb(24, 110, 36);
+}
+
+.tabla-listar tr:nth-child(odd){
+    background: rgb(177, 177, 171);
+}
+
+.tabla-listar tr:nth-child(even){
+    background: rgb(159, 167, 161);
+}
+
+.links a{
+    background-color: #4c418f;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.links a:hover{
+
+    color: white;
+    background-color: #69619c;
+
+}
+
+.negrita{
+    font-weight: bold;
+    color: blue;
+}
+
+/* Formulario registro usuarios */
+.formulario-registro-usuario{
+    border: 2px solid;
+    border-color: black;
+    border-radius: 15px;
+    background-color: rgb(175, 175, 175);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    margin-top: 25px;
+    width: 370px;
+}
+
+.labels{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.labels label{
+    display: block;
+
+}
+.labels input{
+    margin-bottom: 10px;
+}
+
+/* mensaje echo php de registro usuario */
+.msje_reg_usu{
+    color: red;
+}
+
+/* formulario inicio de sesion */
+.form_ini_sesion{
+    border: 2px solid;
+    border-color: black;
+    border-radius: 15px;
+    background-color: rgb(175, 175, 175);
+    padding: 30px;
+    width: 370px;
+    margin: 0 auto;
+
+}
+
+/* modifica todas las paginas ...??? */
+.contenedor>.form_ini_sesion> label{
+    display: block;
+ } 
+
+ .contenedor> .form_ini_sesion> button{
+     display: block;
+ }
+
+ .contenedor> .form_ini_sesion> input{
+    margin-bottom: 7px;
+}
+
+.contenedor{
+    width: 100%;
+    /* border: 2px solid red; */
+    margin-top: 100px;
+}
+
+
+ 

@@ -2,9 +2,9 @@
     session_start();
 
     if(isset($_SESSION['inv'])){
-        echo 'bienvenido! ' . $_SESSION['inv'];
+        echo 'bienvenido! ' ."<span class='negrita'>". $_SESSION['inv']."</span>";
         cantidad_usuarios();
-        echo '<br><a href="../login/cerrar.php">Cerrar Sesion</a>';
+        echo '<div class="links"><br><a href="../login/cerrar.php">Cerrar Sesion</a></div>';
     }else{
         header('Location: ../login/inicio_sesion.php');
     }
@@ -13,7 +13,7 @@
         require_once "../conexion.php";
         $sentencia = $pdo->prepare("SELECT * FROM personas");
         $sentencia->execute();
-        echo "<br>total de registros: ".$sentencia->rowCount();
+        echo "<br>total de registros: "."<span class='negrita'>".$sentencia->rowCount()."</span>";
         $resultado = $sentencia->fetchAll();
         // print_r($resultado);
     }
@@ -27,9 +27,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Búsqueda de contratistas</title>
 </head>
-<body>
+<body class="fondo">
 
 
 <h3>Búsqueda de contratistas</h3>
@@ -39,7 +40,7 @@
     <button onclick="myAlert()">?</button>
 </form>
 
-<table>
+<table class="tabla-listar">
     <thead>
         <tr>
             <th>Autorizado</th>

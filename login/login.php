@@ -45,7 +45,7 @@ if(password_verify($contrasena_login, $resultado['contrasena']) && $resultado['t
 
 }else{
     session_start();
-    $_SESSION['info'] = "Contraseñas no es valida";
+    $_SESSION['info'] = "Contraseña no es valida";
     header('Location: inicio_sesion.php');
     die();
 }

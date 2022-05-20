@@ -2,10 +2,10 @@
     session_start();
 
     if(isset($_SESSION['adm'])){
-        echo 'bienvenido! ' . $_SESSION['adm'];
+        echo 'bienvenido! '."<span class='negrita'>" . $_SESSION['adm']."</span>";
         cantidad_registros();
-        echo '<br><a href="login/cerrar.php">Cerrar Sesion</a>';
-        echo '<br><a href="login/registro_usuario.php">Ir a Registro de usuarios</a>';
+        echo '<div class="links"><br><a href="login/cerrar.php">Cerrar Sesion</a>
+            <br><br><a href="login/registro_usuario.php">Ir a Registro de usuarios</a></div>';
     }else{
         header('Location: login/inicio_sesion.php');
     }
@@ -14,7 +14,7 @@
         require_once "conexion.php";
         $sentencia = $pdo->prepare("SELECT * FROM personas");
         $sentencia->execute();
-        echo "<br>total de registros: ".$sentencia->rowCount();
+        echo "<br>total de registros: "."<span class='negrita'>".$sentencia->rowCount()."</span>";
     }
 ?>
 
@@ -24,19 +24,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Registro de contratistas</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 </head>
 
-<body>
+<body class="fondo">
 
     <div>
+        
         <div>
-            <h3>Registro de contratistas</h3>
-        </div>
-
-        <div>
-            <form action="" method="post" id="frm">
+            <form action="" method="post" id="frm" class="formulario-registro-contratistas" autocomplete="off">
+                <h3>Registro de contratistas</h3>
                 <div>
                     <input type="hidden" name="idp" id="idp" value="">
                 </div>
@@ -44,17 +43,19 @@
                 <div id="respuesta"></div>
 
                 <div>
-                    <label for="">Autorizado</label>
+                    <label for="">Autorizado: </label>
                     <label for="">si</label>
                     <input type="radio" name="autorizado" id="autorizado" value="si" checked>
                     <label for="">no</label>
                     <input type="radio" name="autorizado" id="autorizado" value="no">
                 </div>
+            <div class="input-text">    
                 <div>
                     <label for="rut">Rut</label>
                     <!-- no funciona required -->
                     <input type="text" name="rut" id="rut" placeholder="Rut" maxlength="12" onkeydown="noPuntoComa(event)">
                 </div>
+          
                 <div>
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
@@ -79,6 +80,7 @@
                     <label for="observaciones">Observaciones</label>
                     <input type="text" name="observaciones" id="observaciones" placeholder="Observaciones">
                 </div>
+            </div>   
                 <div>
                     <input type="button" value="Registrar" id="registrar">
                 </div>
@@ -97,7 +99,7 @@
                 </form>
             </div>
 
-            <table>
+            <table class="tabla-listar">
                 <thead>
                     <tr>
                         <th>Autorizado</th>
