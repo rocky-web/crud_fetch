@@ -90,6 +90,7 @@
                     <div>
                         <label for="buscar">Buscar:</label>
                         <input type="text" name="buscar" id="buscar" placeholder="Buscar...">
+                        <button onclick="myAlert()">?</button>
                     </div>
                 </form>
             </div>
@@ -116,6 +117,11 @@
     <script src="script.js"></script>
     <script src="script2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        function myAlert(){
+            alert('Puede buscar por: Rut, Nombre, Apellidos o Empresa');
+        }
+    </script>
 </body>
 
 </html>

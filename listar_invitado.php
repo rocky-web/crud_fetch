@@ -5,7 +5,7 @@ require "conexion.php";
 $consulta = $pdo->prepare("SELECT * FROM personas ORDER BY id DESC LIMIT 50 ");
 $consulta->execute();
 if ($data != "") {
-    $consulta = $pdo->prepare("SELECT * FROM personas WHERE rut LIKE '".$data."%' OR nombre LIKE '".$data."%' OR apellidos LIKE '".$data."%' OR concat(nombre,' ',apellidos) LIKE '".$data."%' LIMIT 50 ");
+   $consulta = $pdo->prepare("SELECT * FROM personas WHERE rut LIKE '".$data."%' OR nombre LIKE '".$data."%' OR apellidos LIKE '".$data."%' OR empresa LIKE '".$data."%' OR concat(nombre,' ',apellidos) LIKE '".$data."%' LIMIT 50 ");
     $consulta->execute();
 }
 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);

@@ -33,6 +33,7 @@
 <form id="frm">
     <label for="">Buscar</label>
     <input type="text" name="buscar" id="buscar" placeholder="buscar" onkeyup="busqueda()">
+    <button onclick="myAlert()">?</button>
 </form>
 
 <table>
@@ -88,6 +89,10 @@
     }
 
     busqueda();
+
+    function myAlert(){
+        alert('Puede buscar por: Rut, Nombre, Apellidos o Empresa');
+    }
     
 
 </script>
