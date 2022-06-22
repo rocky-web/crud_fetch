@@ -1,0 +1,5 @@
+servidor web local
+cd /c/xampp/htdocs/mis-proyectos/crudfetch
+
+servidor web nube
+cd /c/xampp/htdocs/mis-proyectos/'crudfetch - WWW'

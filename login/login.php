@@ -18,7 +18,8 @@ $sentencia = $pdo->prepare($sql);
 $sentencia->execute(array($usuario_login));
 $resultado = $sentencia->fetch();
 
-echo '<pre>';
+// comentar echo 
+echo '<pre>'; // en servidor local NO me causa error pero en servidor web SI
 var_dump($resultado);
 echo '</pre>';
 
@@ -31,7 +32,7 @@ if(!$resultado){
 
 }
 
-echo '<pre>';
+echo '<pre>'; // en servidor local NO me causa error pero en servidor web SI
 var_dump($resultado['contrasena']);// recojemos contraseña desde la base de datos
 echo '</pre>';
 

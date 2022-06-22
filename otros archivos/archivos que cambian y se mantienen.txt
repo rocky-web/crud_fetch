@@ -1,0 +1,3 @@
+Archivos que cambian en la nube:
+- conexion.php
+- login.php

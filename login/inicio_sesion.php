@@ -16,6 +16,8 @@
 </head>
 <body class="fondo">
 
+<h1 class="titulo1"><center>Sistema de Registro de contratistas</center></h1>
+
 <div class="contenedor">
 <form action="login.php" method="post" autocomplete="off" class="form_ini_sesion">
     <h2>Iniciar Sesion</h2>
