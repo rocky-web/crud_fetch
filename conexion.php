@@ -1,5 +1,5 @@
 <?php
-    $servidor = "mysql:dbname=crud;host=localhost";
+    $servidor = "mysql:dbname=crudfetch;host=localhost";
     $user = "root";
     $pass = "";
     try {

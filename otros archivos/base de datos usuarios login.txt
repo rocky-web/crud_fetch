@@ -4,3 +4,4 @@ campos:
 id (int) autoincrementable
 nombre (varchar) 255
 contrasena (varchar) 255
+tipo (varchar) 20
