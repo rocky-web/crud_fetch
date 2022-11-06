@@ -1,0 +1,11 @@
+- en caso de perder la base de datos y tener que crear nuevos usuarios invitado y administrador: en el archivo "registro_usuario.php" debo comentar todo el codigo php. Posteriormente abrir link: "registro_usuario.php" y registrar a:
+
+"usuario administrador"
+nombre usuario: vane 
+tipo usuario: administrador
+pass: 1234
+
+"usuario invitado"
+nombre usuario: pipe 
+tipo usuario: invitado
+pass: 1234

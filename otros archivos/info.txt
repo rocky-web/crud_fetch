@@ -1,3 +1,0 @@
-- en caso de perder la base de datos y tener que crear nuevos usuarios invitado y administrador: en el archivo "registro_usuario.php" debo comentar todo el codigo php y registrar a:
-vane tipo administrador pass: 1234
-pipe tipo invitado pass: 1234
