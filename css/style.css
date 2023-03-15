@@ -1,7 +1,26 @@
 .fondo{
     background-color: rgba(160, 167, 167, 0.733);
-    margin-left: 20px;
+}
 
+.div_container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px 30px 20px 30px;
+}
+
+.div-registro form{
+    padding: 15px;
+}
+
+.div-tabla{
+    display: grid;
+    justify-content: end;
+}
+
+.formulario-registro-contratistas{
+    border: 2px solid;
+    border-color: black;
+    background-color: rgb(175, 175, 175);
 }
 
 /* titulo inicio de sesion */
@@ -13,17 +32,7 @@
     margin-top: 20px;
 }
 
-.formulario-registro-contratistas{
-    border: 2px solid;
-    border-color: black;
-    border-radius: 15px;
-    background-color: rgb(175, 175, 175);
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 30px;
-    margin-top: 25px;
-    width: 290px;
-}
+
 
 
 .input-text label{
@@ -32,10 +41,18 @@
     margin-bottom: 5px;
 }
 
+.input-text input{
+    height: 30px;
+}
+
+.input-text div{
+    margin-bottom: 10px;
+}
+
 .tabla-listar{
     background-color: rgb(175, 175, 175);
     border: 2px solid black;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     padding: 20px;
     margin-bottom: 35px;
 }
@@ -43,6 +60,7 @@
 .tabla-listar th{
     background: rgb(147, 147, 238);
     border: solid 1px rgb(24, 110, 36);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .tabla-listar td{
@@ -136,8 +154,128 @@
 
 .contenedor{
     width: 100%;
-    /* border: 2px solid red; */
     margin-top: 50px;
+}
+
+
+
+.titulo2{
+    background-color: blue;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+.titulo3{
+    margin: 0;
+}
+
+.boton1{
+    background-color: green;
+    cursor: pointer;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+    /* border: 2px solid black; */
+}
+
+.boton2{
+    background-color: orangered;
+    cursor: pointer;
+    height: 30px;
+    font-weight: bold;
+    color: white;
+    /* border: none; */
+}
+
+.boton1:hover{
+    background-color: rgb(87, 247, 82) ;
+    color: black;
+}
+
+.boton2:hover{
+    background-color: rgb(250, 144, 94);
+    color: black;
+}
+
+.tb_buscar{
+    width: 300px;
+    height: 30px;
+}
+
+
+
+.div-items{
+    display: grid;
+    justify-content: end;
+}
+
+.div-items label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
+
+#registrar{
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    
+}
+
+#registrar:hover{
+    background-color: rgb(87, 247, 82) ;
+    color: black;
+}
+
+@media only screen and (max-width: 1300px) {
+    .div_container{
+
+        grid-template-columns: 95%;
+        padding: 0;
+        justify-content: center;
+       
+    }
+
+    .div-registro{
+        background-color: green;
+    }
+
+    .div-tabla{
+        justify-content: center;
+    }
+
+    .input-text input{
+        width: 50%;
+        height: 30px;
+    }
+
+    .div-registro form{
+        margin-top: 30px;
+    }
+
+    .div-items{
+        justify-content: center;
+    }
+   
+}  
+
+@media only screen and (max-width: 950px) {
+    .container_table{
+        border: solid 2px blue;
+        overflow-x: scroll;
+    }
+
+    .tabla-listar{
+        width: 900px;
+    }
 }
 
 

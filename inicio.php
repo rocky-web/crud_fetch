@@ -25,17 +25,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Registro de contratistas</title>
+    <title>Registro de personas</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 </head>
 
 <body class="fondo">
 
-    <div>
+    <div class="div_container">
         
-        <div>
+        <div class="div-registro">
+        
             <form action="" method="post" id="frm" class="formulario-registro-contratistas" autocomplete="off">
-                <h3>Registro de contratistas</h3>
+                <h2 class="titulo2">Registro de personas</h2>
+               
                 <div>
                     <input type="hidden" name="idp" id="idp" value="">
                 </div>
@@ -87,45 +89,42 @@
             </form>
         </div>
 
-        <div>
-            <div>
-                <h3>Búsqueda de contratistas</h3>
+        <div class="div-tabla">
+            <div class="div-form">
                 <form action="" method="post">
-                    <div>
+                    <div class="div-items">
                         <label for="buscar">Buscar:</label>
-                        <input type="text" name="buscar" id="buscar" placeholder="Buscar...">
-                        <button onclick="myAlert()">?</button>
+                        <input type="text" class="tb_buscar" name="buscar" id="buscar" placeholder="Rut, Nombre, Apellidos o Empresa">
+                        
                     </div>
                 </form>
             </div>
 
-            <table class="tabla-listar">
-                <thead>
-                    <tr>
-                        <th>Autorizado</th>
-                        <th>Rut</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Empresa</th>
-                        <th>Seccion</th>
-                        <th>Patente</th>
-                        <th>Observaciones</th>
-                    </tr>
-                </thead>
-                <tbody id="resultado">
-                </tbody>
-            </table>
+            <div class="container_table">
+                <table class="tabla-listar">
+                    <thead>
+                        <tr>
+                            <th>Autorizado</th>
+                            <th>Rut</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Empresa</th>
+                            <th>Seccion</th>
+                            <th>Patente</th>
+                            <th>Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultado">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
     <script src="script2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
-        function myAlert(){
-            alert('Puede buscar por: Rut, Nombre, Apellidos o Empresa');
-        }
-    </script>
+    
 </body>
 
 </html>

@@ -25,8 +25,8 @@ foreach ($resultado as $data) {
             <td>" . $data['patente'] . "</td>
             <td>" . $data['observaciones'] . "</td>
             <td>
-                <button type='button' onclick=Editar('" . $data['id'] . "')>Editar</button>
-                <button type='button' onclick=Eliminar('" . $data['id'] . "')>Eliminar</button>
+                <button class='boton1' type='button' onclick=Editar('" . $data['id'] . "')>Editar</button>
+                <button class='boton2' type='button' onclick=Eliminar('" . $data['id'] . "')>Eliminar</button>
             </td>        
         </tr>";        
 }
