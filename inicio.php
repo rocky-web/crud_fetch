@@ -55,7 +55,7 @@
                 <div>
                     <label for="rut">Rut</label>
                     <!-- no funciona required -->
-                    <input type="text" name="rut" id="rut" placeholder="Rut" maxlength="12" onkeydown="noPuntoComa(event)">
+                    <input type="text" name="rut" id="rut" placeholder="Rut" maxlength="12" >
                 </div>
           
                 <div>
@@ -120,6 +120,8 @@
             </div>
         </div>
     </div>
+
+    <input type="hidden" name="" id="hiden">
 
     <script src="script.js"></script>
     <script src="script2.js"></script>
