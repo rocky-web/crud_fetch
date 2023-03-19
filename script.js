@@ -1,3 +1,4 @@
+
 ListarPersonas();
 function ListarPersonas(busqueda) {
     fetch("listar.php", {
@@ -40,74 +41,6 @@ function registrado(){
 
 }
 
-registrar.addEventListener("click", () => {
-
-    rut.style.cssText = 'pointer-events: false';
-
-    if(rut.value === null || rut.value === ''){
-        rut.style.backgroundColor = "yellow";
-        rut.placeholder="Campo obligatorio";
-    }else if(rut.value !== null || rut.value !== ''){
-        rut.style.backgroundColor = "";
-        rut.placeholder="";
-    }
-    if(nombre.value === null || nombre.value === ''){
-        nombre.style.backgroundColor = "yellow";
-        nombre.placeholder="Campo obligatorio";
-    }else if(nombre.value !== null || nombre.value !== ''){
-        nombre.style.backgroundColor = "";
-        nombre.placeholder="";
-    }
-    if(apellidos.value === null || apellidos.value === ''){
-        apellidos.style.backgroundColor = "yellow";
-        apellidos.placeholder="Campo obligatorio";
-    }else if(apellidos.value !== null || apellidos.value !== ''){
-        apellidos.style.backgroundColor = "";
-        apellidos.placeholder="";
-    }
-    if(empresa.value === null || empresa.value === ''){
-        empresa.style.backgroundColor = "yellow";
-        empresa.placeholder="Campo obligatorio";
-    }else if(empresa.value !== null || empresa.value !== ''){
-        empresa.style.backgroundColor = "";
-        empresa.placeholder="";
-    }
-
-    if(rut.value !== null && rut.value !== '' && nombre.value !== null && nombre.value !== '' && apellidos.value !== null && apellidos.value !== '' && empresa.value !== null && empresa.value !== ''){
-        rut.placeholder="Rut";
-        nombre.placeholder="Nombre";
-        apellidos.placeholder="Apellidos";
-        empresa.placeholder="Empresa";
-
-        var datos = new FormData(frm);
-        var respuesta = document.getElementById("respuesta");
-            
-        fetch('duplicado.php', {
-            method: 'POST',
-            body: datos
-        })
-    
-        .then( res => res.json())
-        .then( data => {
-            // console.log(data);
-            if(data === 'duplicado' && registrar.value=='Registrar'){
-                respuesta.innerHTML = `<div>El rut ingresado ya existe</div>`
-                rut.style.backgroundColor = "red";
-            }else if(data === 'duplicado' && registrar.value=='Actualizar'){
-                respuesta.innerHTML = `<div></div>`
-                registrado(); 
-            }else if(data === 'dato ok'){
-                respuesta.innerHTML = `<div></div>`
-                registrado(); 
-            }
-        })
-
-        
-
-    }
-    
-    
-});
 
 function Eliminar(id) {
     Swal.fire({

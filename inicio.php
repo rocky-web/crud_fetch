@@ -51,7 +51,7 @@
                     <label for="">no</label>
                     <input type="radio" name="autorizado" id="autorizado" value="no">
                 </div>
-            <div class="input-text">    
+                <div class="input-text">    
                 <div>
                     <label for="rut">Rut</label>
                     <!-- no funciona required -->
@@ -82,7 +82,7 @@
                     <label for="observaciones">Observaciones</label>
                     <input type="text" name="observaciones" id="observaciones" placeholder="Observaciones">
                 </div>
-            </div>   
+             </div>   
                 <div>
                     <input type="button" value="Registrar" id="registrar">
                 </div>
