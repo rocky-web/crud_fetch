@@ -55,6 +55,7 @@
     /* border-radius: 15px; */
     padding: 20px;
     margin-bottom: 35px;
+    width: 100%;
 }
 
 .tabla-listar th{
@@ -64,7 +65,7 @@
 }
 
 .tabla-listar td{
-    border: solid 1px rgb(24, 110, 36);
+    /* border: solid 1px rgb(24, 110, 36); */
 }
 
 .tabla-listar tr:nth-child(odd){
@@ -242,10 +243,6 @@
         padding: 0;
         justify-content: center;
        
-    }
-
-    .div-registro{
-        background-color: green;
     }
 
     .div-tabla{
