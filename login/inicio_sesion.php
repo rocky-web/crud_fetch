@@ -66,15 +66,15 @@
             width: 100%;
             height: 40px;
             cursor: pointer;
-            background-color: MediumSlateBlue;
             border: none;
             border-radius: 5px;
             color: white;
             font-size: 16px;
-        }
-
-        form input[type="submit"]:hover{
             background-color: rgb(79, 131, 133);
+        }
+        
+        form input[type="submit"]:hover{
+            background-color: MediumSlateBlue;
             color: white;
             
         }
