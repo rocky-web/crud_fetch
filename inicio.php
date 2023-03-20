@@ -54,8 +54,8 @@
                 <div class="input-text">    
                 <div>
                     <label for="rut">Rut</label>
-                    <!-- no funciona required -->
                     <input type="text" name="rut" id="rut" placeholder="Rut" maxlength="12" >
+                    <div>respuesta error</div>
                 </div>
           
                 <div>
@@ -72,15 +72,15 @@
                 </div>
                 <div>
                     <label for="seccion">Seccion</label>
-                    <input type="text" name="seccion" id="seccion" placeholder="Seccion">
+                    <input type="text" name="seccion" id="seccion" placeholder="Seccion (opcional)">
                 </div>
                 <div>
                     <label for="patente">Patente</label>
-                    <input type="text" name="patente" id="patente" placeholder="Patente">
+                    <input type="text" name="patente" id="patente" placeholder="Patente (opcional)">
                 </div>
                 <div>
                     <label for="observaciones">Observaciones</label>
-                    <input type="text" name="observaciones" id="observaciones" placeholder="Observaciones">
+                    <input type="text" name="observaciones" id="observaciones" placeholder="Observaciones (opcional)">
                 </div>
              </div>   
                 <div>

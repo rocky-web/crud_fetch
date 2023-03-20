@@ -83,7 +83,7 @@ registrar.addEventListener("click", () => {
         /* empresa.style.backgroundColor = "";
         empresa.placeholder=""; */
         var texto = empresa.value;
-        var criterio7 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{2,50}$/)
+        var criterio7 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,50}$/)
 
         if(criterio7 == 0){
             empresa.style.backgroundColor = "";
@@ -97,6 +97,69 @@ registrar.addEventListener("click", () => {
             // e.preventDefault();
         }
     }
+
+    // SECCION
+   if(seccion.value !== null || seccion.value !== ''){
+        var texto = seccion.value;
+        var criterio8 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
+
+       if(texto == ''){
+            console.log('seccion vacio SI es valido');
+            var res5 = "seccion SI es valido";
+            // e.preventDefault();
+        }else if(criterio8 == 0){
+            /*  seccion.style.backgroundColor = "";
+             seccion.placeholder=""; */
+            console.log("seccion SI es valido");
+            var res5 = "seccion SI es valido";
+            
+         }else if(criterio8 == -1){
+            console.log("seccion NO es valido");
+         }
+    }
+
+    // PATENTE
+   if(patente.value !== null || patente.value !== ''){
+        var texto = patente.value;
+        var criterio9 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
+
+       if(texto == ''){
+            console.log('patente vacio SI es valido');
+            var res6 = "patente SI es valido";
+            // e.preventDefault();
+        }else if(criterio9 == 0){
+            /*  seccion.style.backgroundColor = "";
+             seccion.placeholder=""; */
+            console.log("patente SI es valido");
+            var res6 = "patente SI es valido";
+            
+         }else if(criterio9 == -1){
+            console.log("patente NO es valido");
+         }
+    }
+
+    // OBSERVACIONES
+   if(observaciones.value !== null || observaciones.value !== ''){
+        var texto = observaciones.value;
+        var criterio10 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
+
+       if(texto == ''){
+            console.log('observaciones vacio SI es valido');
+            var res7 = "observaciones SI es valido";
+            // e.preventDefault();
+        }else if(criterio10 == 0){
+            //  seccion.style.backgroundColor = "";
+            //  seccion.placeholder=""; 
+            console.log("observaciones SI es valido");
+            var res7 = "observaciones SI es valido";
+            
+         }else if(criterio10 == -1){
+            console.log("observaciones NO es valido");
+         }
+    }
+
+
+   
 
     if(rut.value !== null && rut.value !== '' && nombre.value !== null && nombre.value !== '' && apellidos.value !== null && apellidos.value !== '' && empresa.value !== null && empresa.value !== ''){
         rut.placeholder="Rut";
@@ -137,16 +200,12 @@ registrar.addEventListener("click", () => {
         async function respuesta_fetch(){
             var res = await resp_fetch();
             // console.log("funcion asincrona: "+res);
-            if(res1=="rut SI es valido" && res !== "rut SI duplicado" && res2 == "nombre SI es valido" && res3 == "apellidos SI es valido" && res4 == "empresa SI es valido"){
+            if(res1=="rut SI es valido" && res !== "rut SI duplicado" && res2 == "nombre SI es valido" && res3 == "apellidos SI es valido" && res4 == "empresa SI es valido" &&  res5 == "seccion SI es valido" && res6 == "patente SI es valido" && res7 == "observaciones SI es valido"){
                 registrado();
             }
             
         }
         respuesta_fetch();
-
-    
-       
-       
 
     }  // end if
 
@@ -159,10 +218,6 @@ registrar.addEventListener("click", () => {
 /* if(res1 == "rut SI es valido" && res2 == "nombre SI es valido"){
     return "rut SI es valido"
 } */
-
-
-
-
 
 
 /* function noPuntoComa( event ) {
