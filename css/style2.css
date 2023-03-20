@@ -1,0 +1,21 @@
+/* errores */
+
+.error_campo{
+    border-color: red;
+    outline-color: red;
+    background-color: yellow;
+    
+}
+
+.ok_campo{
+    border-color: black;
+    outline-color: black;
+    background-color: white;
+}
+
+
+/* 
+.error_rut > input::placeholder{
+    color: red;
+
+} */

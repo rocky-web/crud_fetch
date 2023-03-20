@@ -25,6 +25,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
     <title>Registro de personas</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 </head>
@@ -55,32 +56,38 @@
                 <div>
                     <label for="rut">Rut</label>
                     <input type="text" name="rut" id="rut" placeholder="Rut" maxlength="12" >
-                    <div>respuesta error</div>
+                    <div id="msje_rut">respuesta error</div>
                 </div>
           
                 <div>
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <div id="msje_nom">respuesta error</div>
                 </div>
                 <div>
                     <label for="apellidos">Apellidos</label>
                     <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                    <div id="msje_ape">respuesta error</div>
                 </div>
                 <div>
                     <label for="empresa">Empresa</label>
                     <input type="text" name="empresa" id="empresa" placeholder="Empresa">
+                    <div id="msje_emp">respuesta error</div>
                 </div>
                 <div>
                     <label for="seccion">Seccion</label>
                     <input type="text" name="seccion" id="seccion" placeholder="Seccion (opcional)">
+                    <div id="msje_sec">respuesta error</div>
                 </div>
                 <div>
                     <label for="patente">Patente</label>
                     <input type="text" name="patente" id="patente" placeholder="Patente (opcional)">
+                    <div id="msje_pat">respuesta error</div>
                 </div>
                 <div>
                     <label for="observaciones">Observaciones</label>
                     <input type="text" name="observaciones" id="observaciones" placeholder="Observaciones (opcional)">
+                    <div id="msje_obs">respuesta error</div>
                 </div>
              </div>   
                 <div>

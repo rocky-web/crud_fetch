@@ -12,10 +12,15 @@ registrar.addEventListener("click", () => {
     rut.style.cssText = 'pointer-events: false';
 
     if(rut.value === null || rut.value === ''){
+        document.getElementById('rut').classList.remove("ok_campo");
+        document.getElementById('rut').classList.add("error_campo");
         console.log('campo rut VACIO');
-        rut.style.backgroundColor = "yellow";
-        rut.placeholder="Campo obligatorio";
+        // rut.placeholder="Campo obligatorio";
+        // document.getElementById('rut').classList.add("error_campo");
+        // rut.style.backgroundColor = "yellow";
     }else if(rut.value !== null || rut.value !== ''){
+        
+
         var texto = rut.value;
         var criterio1 = texto.search(/(^\d{1,2})(\.)(\d{3})(\.)(\d{3})(\-)(\d|\k)\b/gim)
         var criterio2 = texto.search(/^\d{7}(\k|\d)\b/gim)
@@ -23,30 +28,44 @@ registrar.addEventListener("click", () => {
         var criterio4 = texto.search(/(^\d{7,8}\-)(\k|\d)\b/gim)
 
         if(criterio1 == 0 || criterio2 == 0 || criterio3 == 0 ||criterio4 == 0){
+            document.getElementById('rut').classList.remove("error_campo");
+            document.getElementById('rut').classList.add("ok_campo");
+            // document.getElementById('rut').classList.remove("error_campo");
+            // rut.style.backgroundColor = "white";
+
            console.log("rut SI es valido");
            var res1 = "rut SI es valido";
            
         }else{
             console.log('rut NO es valido');
+            document.getElementById('rut').classList.remove("ok_campo");
+            document.getElementById('rut').classList.add("error_campo");
+            // document.getElementById('rut').classList.add("error_campo")
             // e.preventDefault();
         }
     }
 
     if(nombre.value === null || nombre.value === ''){
-        nombre.style.backgroundColor = "yellow";
+        // nombre.style.backgroundColor = "yellow";
+        document.getElementById('nombre').classList.remove("ok_campo");
+        document.getElementById('nombre').classList.add("error_campo");
         nombre.placeholder="Campo obligatorio";
     }else if(nombre.value !== null || nombre.value !== ''){
         var texto = nombre.value;
         var criterio5 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,50}$/)
 
         if(criterio5 == 0){
-            nombre.style.backgroundColor = "";
+            document.getElementById('nombre').classList.remove("error_campo");
+            document.getElementById('nombre').classList.add("ok_campo");
+            // nombre.style.backgroundColor = "";
             nombre.placeholder="";
            console.log("nombre SI es valido");
           
            var res2 = "nombre SI es valido";
            
         }else{
+            document.getElementById('nombre').classList.remove("ok_campo")
+            document.getElementById('nombre').classList.add("error_campo")
             console.log('nombre NO es valido');
             // e.preventDefault();
         }
@@ -54,22 +73,30 @@ registrar.addEventListener("click", () => {
     }
 
     if(apellidos.value === null || apellidos.value === ''){
-        apellidos.style.backgroundColor = "yellow";
+        // apellidos.style.backgroundColor = "yellow";
+        document.getElementById('apellidos').classList.remove("ok_campo")
+        document.getElementById('apellidos').classList.add("error_campo")
         apellidos.placeholder="Campo obligatorio";
     }else if(apellidos.value !== null || apellidos.value !== ''){
        /*  apellidos.style.backgroundColor = "";
         apellidos.placeholder=""; */
+        document.getElementById('apellidos').classList.remove("error_campo");
+        document.getElementById('apellidos').classList.add("ok_campo");
         var texto = apellidos.value;
         var criterio6 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,50}$/)
 
         if(criterio6 == 0){
-            apellidos.style.backgroundColor = "";
-            apellidos.placeholder="";
+            // apellidos.style.backgroundColor = "";
+            // apellidos.placeholder="";
+            document.getElementById('apellidos').classList.remove("error_campo");
+            document.getElementById('apellidos').classList.add("ok_campo");
            console.log("apellidos SI es valido");
           
            var res3 = "apellidos SI es valido";
            
         }else{
+            document.getElementById('apellidos').classList.remove("ok_campo")
+            document.getElementById('apellidos').classList.add("error_campo")
             console.log('apellidos NO es valido');
             // e.preventDefault();
         }
@@ -77,22 +104,30 @@ registrar.addEventListener("click", () => {
     }
 
     if(empresa.value === null || empresa.value === ''){
-        empresa.style.backgroundColor = "yellow";
+        document.getElementById('empresa').classList.remove("ok_campo");
+        document.getElementById('empresa').classList.add("error_campo");
+        // empresa.style.backgroundColor = "yellow";
         empresa.placeholder="Campo obligatorio";
     }else if(empresa.value !== null || empresa.value !== ''){
         /* empresa.style.backgroundColor = "";
         empresa.placeholder=""; */
+        document.getElementById('empresa').classList.remove("error_campo");
+        document.getElementById('empresa').classList.add("ok_campo");
         var texto = empresa.value;
         var criterio7 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,50}$/)
 
         if(criterio7 == 0){
-            empresa.style.backgroundColor = "";
+            // empresa.style.backgroundColor = "";
+            document.getElementById('empresa').classList.remove("error_campo");
+        document.getElementById('empresa').classList.add("ok_campo");
             empresa.placeholder="";
            console.log("empresa SI es valido");
           
            var res4 = "empresa SI es valido";
            
         }else{
+            document.getElementById('empresa').classList.remove("ok_campo");
+            document.getElementById('empresa').classList.add("error_campo");
             console.log('empresa NO es valido');
             // e.preventDefault();
         }
@@ -104,16 +139,22 @@ registrar.addEventListener("click", () => {
         var criterio8 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
 
        if(texto == ''){
+            document.getElementById('seccion').classList.remove("error_campo");
+            document.getElementById('seccion').classList.add("ok_campo");
             console.log('seccion vacio SI es valido');
             var res5 = "seccion SI es valido";
             // e.preventDefault();
         }else if(criterio8 == 0){
-            /*  seccion.style.backgroundColor = "";
-             seccion.placeholder=""; */
+            // seccion.style.backgroundColor = "";
+            //  seccion.placeholder=""; 
+            document.getElementById('seccion').classList.remove("error_campo");
+            document.getElementById('seccion').classList.add("ok_campo");
             console.log("seccion SI es valido");
             var res5 = "seccion SI es valido";
             
          }else if(criterio8 == -1){
+            document.getElementById('seccion').classList.remove("ok_campo");
+            document.getElementById('seccion').classList.add("error_campo");
             console.log("seccion NO es valido");
          }
     }
@@ -124,16 +165,22 @@ registrar.addEventListener("click", () => {
         var criterio9 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
 
        if(texto == ''){
+            document.getElementById('patente').classList.remove("error_campo");
+            document.getElementById('patente').classList.add("ok_campo");
             console.log('patente vacio SI es valido');
             var res6 = "patente SI es valido";
             // e.preventDefault();
         }else if(criterio9 == 0){
-            /*  seccion.style.backgroundColor = "";
-             seccion.placeholder=""; */
+            document.getElementById('patente').classList.remove("error_campo");
+            document.getElementById('patente').classList.add("ok_campo");
+            // seccion.style.backgroundColor = "";
+            //  seccion.placeholder=""; 
             console.log("patente SI es valido");
             var res6 = "patente SI es valido";
             
          }else if(criterio9 == -1){
+            document.getElementById('patente').classList.remove("ok_campo");
+            document.getElementById('patente').classList.add("error_campo");
             console.log("patente NO es valido");
          }
     }
@@ -144,16 +191,22 @@ registrar.addEventListener("click", () => {
         var criterio10 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
 
        if(texto == ''){
+            document.getElementById('observaciones').classList.remove("error_campo");
+            document.getElementById('observaciones').classList.add("ok_campo");
             console.log('observaciones vacio SI es valido');
             var res7 = "observaciones SI es valido";
             // e.preventDefault();
         }else if(criterio10 == 0){
+            document.getElementById('observaciones').classList.remove("error_campo");
+            document.getElementById('observaciones').classList.add("ok_campo");
             //  seccion.style.backgroundColor = "";
             //  seccion.placeholder=""; 
             console.log("observaciones SI es valido");
             var res7 = "observaciones SI es valido";
             
          }else if(criterio10 == -1){
+            document.getElementById('observaciones').classList.remove("ok_campo");
+            document.getElementById('observaciones').classList.add("error_campo");
             console.log("observaciones NO es valido");
          }
     }
