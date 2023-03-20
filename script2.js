@@ -36,8 +36,21 @@ registrar.addEventListener("click", () => {
         nombre.style.backgroundColor = "yellow";
         nombre.placeholder="Campo obligatorio";
     }else if(nombre.value !== null || nombre.value !== ''){
-        nombre.style.backgroundColor = "";
-        nombre.placeholder="";
+        var texto = nombre.value;
+        var criterio5 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,50}$/)
+
+        if(criterio5 == 0){
+            nombre.style.backgroundColor = "";
+            nombre.placeholder="";
+           console.log("nombre SI es valido");
+          
+           var res2 = "nombre SI es valido";
+           
+        }else{
+            console.log('nombre NO es valido');
+            // e.preventDefault();
+        }
+       
     }
 
     if(apellidos.value === null || apellidos.value === ''){
@@ -47,7 +60,7 @@ registrar.addEventListener("click", () => {
         apellidos.style.backgroundColor = "";
         apellidos.placeholder="";
     }
-    
+
     if(empresa.value === null || empresa.value === ''){
         empresa.style.backgroundColor = "yellow";
         empresa.placeholder="Campo obligatorio";
@@ -78,13 +91,13 @@ registrar.addEventListener("click", () => {
                 console.log("el rut ya existe");
             }else if(data === 'duplicado' && registrar.value=='Actualizar'){
                 respuesta.innerHTML = `<div></div>`
-                if(res1 == "rut SI es valido"){
+                if(res1 == "rut SI es valido" && res2 == "nombre SI es valido"){
                     registrado(); 
                 }
                 // registrado(); 
             }else if(data === 'dato ok'){
                 respuesta.innerHTML = `<div></div>`
-                if(res1 == "rut SI es valido"){
+                if(res1 == "rut SI es valido" && res2 == "nombre SI es valido"){
                     registrado(); 
                 }
                 
