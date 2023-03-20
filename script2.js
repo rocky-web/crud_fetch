@@ -57,16 +57,45 @@ registrar.addEventListener("click", () => {
         apellidos.style.backgroundColor = "yellow";
         apellidos.placeholder="Campo obligatorio";
     }else if(apellidos.value !== null || apellidos.value !== ''){
-        apellidos.style.backgroundColor = "";
-        apellidos.placeholder="";
+       /*  apellidos.style.backgroundColor = "";
+        apellidos.placeholder=""; */
+        var texto = apellidos.value;
+        var criterio6 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,50}$/)
+
+        if(criterio6 == 0){
+            apellidos.style.backgroundColor = "";
+            apellidos.placeholder="";
+           console.log("apellidos SI es valido");
+          
+           var res3 = "apellidos SI es valido";
+           
+        }else{
+            console.log('apellidos NO es valido');
+            // e.preventDefault();
+        }
+
     }
 
     if(empresa.value === null || empresa.value === ''){
         empresa.style.backgroundColor = "yellow";
         empresa.placeholder="Campo obligatorio";
     }else if(empresa.value !== null || empresa.value !== ''){
-        empresa.style.backgroundColor = "";
-        empresa.placeholder="";
+        /* empresa.style.backgroundColor = "";
+        empresa.placeholder=""; */
+        var texto = empresa.value;
+        var criterio7 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{2,50}$/)
+
+        if(criterio7 == 0){
+            empresa.style.backgroundColor = "";
+            empresa.placeholder="";
+           console.log("empresa SI es valido");
+          
+           var res4 = "empresa SI es valido";
+           
+        }else{
+            console.log('empresa NO es valido');
+            // e.preventDefault();
+        }
     }
 
     if(rut.value !== null && rut.value !== '' && nombre.value !== null && nombre.value !== '' && apellidos.value !== null && apellidos.value !== '' && empresa.value !== null && empresa.value !== ''){
@@ -107,8 +136,8 @@ registrar.addEventListener("click", () => {
 
         async function respuesta_fetch(){
             var res = await resp_fetch();
-            console.log("funcion asincrona: "+res);
-            if(res=="rut registrar ok" && res2 == "nombre SI es valido"){
+            // console.log("funcion asincrona: "+res);
+            if(res1=="rut SI es valido" && res !== "rut SI duplicado" && res2 == "nombre SI es valido" && res3 == "apellidos SI es valido" && res4 == "empresa SI es valido"){
                 registrado();
             }
             
