@@ -12,10 +12,11 @@ registrar.addEventListener("click", () => {
     rut.style.cssText = 'pointer-events: false';
 
     if(rut.value === null || rut.value === ''){
+        msje_rut.innerHTML=""
+        rut.placeholder="Campo obligatorio";
         document.getElementById('rut').classList.remove("ok_campo");
         document.getElementById('rut').classList.add("error_campo");
         console.log('campo rut VACIO');
-        // rut.placeholder="Campo obligatorio";
         // document.getElementById('rut').classList.add("error_campo");
         // rut.style.backgroundColor = "yellow";
     }else if(rut.value !== null || rut.value !== ''){
@@ -28,15 +29,17 @@ registrar.addEventListener("click", () => {
         var criterio4 = texto.search(/(^\d{7,8}\-)(\k|\d)\b/gim)
 
         if(criterio1 == 0 || criterio2 == 0 || criterio3 == 0 ||criterio4 == 0){
+            msje_rut.innerHTML=""
             document.getElementById('rut').classList.remove("error_campo");
             document.getElementById('rut').classList.add("ok_campo");
             // document.getElementById('rut').classList.remove("error_campo");
             // rut.style.backgroundColor = "white";
-
+            
            console.log("rut SI es valido");
            var res1 = "rut SI es valido";
            
         }else{
+            msje_rut.innerHTML="Formato rut no válido"
             console.log('rut NO es valido');
             document.getElementById('rut').classList.remove("ok_campo");
             document.getElementById('rut').classList.add("error_campo");
@@ -46,15 +49,17 @@ registrar.addEventListener("click", () => {
     }
 
     if(nombre.value === null || nombre.value === ''){
-        // nombre.style.backgroundColor = "yellow";
+        msje_nom.innerHTML=""
+        nombre.placeholder="Campo obligatorio";
         document.getElementById('nombre').classList.remove("ok_campo");
         document.getElementById('nombre').classList.add("error_campo");
-        nombre.placeholder="Campo obligatorio";
+        // nombre.style.backgroundColor = "yellow";
     }else if(nombre.value !== null || nombre.value !== ''){
         var texto = nombre.value;
         var criterio5 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,50}$/)
 
         if(criterio5 == 0){
+            msje_nom.innerHTML="";
             document.getElementById('nombre').classList.remove("error_campo");
             document.getElementById('nombre').classList.add("ok_campo");
             // nombre.style.backgroundColor = "";
@@ -64,6 +69,7 @@ registrar.addEventListener("click", () => {
            var res2 = "nombre SI es valido";
            
         }else{
+            msje_nom.innerHTML="Debe contener minimo 3 caracteres, Solo letras"
             document.getElementById('nombre').classList.remove("ok_campo")
             document.getElementById('nombre').classList.add("error_campo")
             console.log('nombre NO es valido');
@@ -73,6 +79,7 @@ registrar.addEventListener("click", () => {
     }
 
     if(apellidos.value === null || apellidos.value === ''){
+        msje_ape.innerHTML=""
         // apellidos.style.backgroundColor = "yellow";
         document.getElementById('apellidos').classList.remove("ok_campo")
         document.getElementById('apellidos').classList.add("error_campo")
@@ -86,6 +93,7 @@ registrar.addEventListener("click", () => {
         var criterio6 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]{3,50}$/)
 
         if(criterio6 == 0){
+            msje_ape.innerHTML=""
             // apellidos.style.backgroundColor = "";
             // apellidos.placeholder="";
             document.getElementById('apellidos').classList.remove("error_campo");
@@ -95,6 +103,7 @@ registrar.addEventListener("click", () => {
            var res3 = "apellidos SI es valido";
            
         }else{
+            msje_ape.innerHTML="Debe contener minimo 3 caracteres, Solo letras"
             document.getElementById('apellidos').classList.remove("ok_campo")
             document.getElementById('apellidos').classList.add("error_campo")
             console.log('apellidos NO es valido');
@@ -104,6 +113,7 @@ registrar.addEventListener("click", () => {
     }
 
     if(empresa.value === null || empresa.value === ''){
+        msje_emp.innerHTML=""
         document.getElementById('empresa').classList.remove("ok_campo");
         document.getElementById('empresa').classList.add("error_campo");
         // empresa.style.backgroundColor = "yellow";
@@ -117,6 +127,7 @@ registrar.addEventListener("click", () => {
         var criterio7 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,50}$/)
 
         if(criterio7 == 0){
+            msje_emp.innerHTML=""
             // empresa.style.backgroundColor = "";
             document.getElementById('empresa').classList.remove("error_campo");
         document.getElementById('empresa').classList.add("ok_campo");
@@ -126,6 +137,7 @@ registrar.addEventListener("click", () => {
            var res4 = "empresa SI es valido";
            
         }else{
+            msje_emp.innerHTML="Debe contener minimo 3 caracteres, Puede ser alfanuméricos"
             document.getElementById('empresa').classList.remove("ok_campo");
             document.getElementById('empresa').classList.add("error_campo");
             console.log('empresa NO es valido');
@@ -139,12 +151,14 @@ registrar.addEventListener("click", () => {
         var criterio8 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
 
        if(texto == ''){
+            msje_sec.innerHTML=""
             document.getElementById('seccion').classList.remove("error_campo");
             document.getElementById('seccion').classList.add("ok_campo");
             console.log('seccion vacio SI es valido');
             var res5 = "seccion SI es valido";
             // e.preventDefault();
         }else if(criterio8 == 0){
+            msje_sec.innerHTML=""
             // seccion.style.backgroundColor = "";
             //  seccion.placeholder=""; 
             document.getElementById('seccion').classList.remove("error_campo");
@@ -153,24 +167,27 @@ registrar.addEventListener("click", () => {
             var res5 = "seccion SI es valido";
             
          }else if(criterio8 == -1){
+            msje_sec.innerHTML="Puede estar vacio o Debe contener minimo 3 caracteres, Puede ser alfanuméricos"
             document.getElementById('seccion').classList.remove("ok_campo");
             document.getElementById('seccion').classList.add("error_campo");
             console.log("seccion NO es valido");
          }
     }
 
-    // PATENTE
+    // PATENTE (VALIDAR PATENTE EXP REG)
    if(patente.value !== null || patente.value !== ''){
         var texto = patente.value;
         var criterio9 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
 
        if(texto == ''){
+            msje_pat.innerHTML=""
             document.getElementById('patente').classList.remove("error_campo");
             document.getElementById('patente').classList.add("ok_campo");
             console.log('patente vacio SI es valido');
             var res6 = "patente SI es valido";
             // e.preventDefault();
         }else if(criterio9 == 0){
+            msje_pat.innerHTML=""
             document.getElementById('patente').classList.remove("error_campo");
             document.getElementById('patente').classList.add("ok_campo");
             // seccion.style.backgroundColor = "";
@@ -179,6 +196,7 @@ registrar.addEventListener("click", () => {
             var res6 = "patente SI es valido";
             
          }else if(criterio9 == -1){
+            msje_pat.innerHTML="Puede estar vacio o Debe contener minimo 3 caracteres, Puede ser alfanuméricos"
             document.getElementById('patente').classList.remove("ok_campo");
             document.getElementById('patente').classList.add("error_campo");
             console.log("patente NO es valido");
@@ -191,12 +209,14 @@ registrar.addEventListener("click", () => {
         var criterio10 = texto.search(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ0-9]{3,30}$/)
 
        if(texto == ''){
+        msje_obs.innerHTML=""
             document.getElementById('observaciones').classList.remove("error_campo");
             document.getElementById('observaciones').classList.add("ok_campo");
             console.log('observaciones vacio SI es valido');
             var res7 = "observaciones SI es valido";
             // e.preventDefault();
         }else if(criterio10 == 0){
+            msje_obs.innerHTML=""
             document.getElementById('observaciones').classList.remove("error_campo");
             document.getElementById('observaciones').classList.add("ok_campo");
             //  seccion.style.backgroundColor = "";
@@ -205,6 +225,7 @@ registrar.addEventListener("click", () => {
             var res7 = "observaciones SI es valido";
             
          }else if(criterio10 == -1){
+            msje_obs.innerHTML="Puede estar vacio o Debe contener minimo 3 caracteres, Puede ser alfanuméricos"
             document.getElementById('observaciones').classList.remove("ok_campo");
             document.getElementById('observaciones').classList.add("error_campo");
             console.log("observaciones NO es valido");
