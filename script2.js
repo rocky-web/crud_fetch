@@ -78,39 +78,58 @@ registrar.addEventListener("click", () => {
         var datos = new FormData(frm);
         var respuesta = document.getElementById("respuesta");
             
-        fetch('duplicado.php', {
-            method: 'POST',
-            body: datos
-        })
-        .then( res => res.json())
-        .then( data => {
-            // console.log(data);
-            if(data === 'duplicado' && registrar.value=='Registrar'){
-                respuesta.innerHTML = `<div>El rut ingresado ya existe</div>`
-                rut.style.backgroundColor = "red";
-                console.log("el rut ya existe");
-            }else if(data === 'duplicado' && registrar.value=='Actualizar'){
-                respuesta.innerHTML = `<div></div>`
-                if(res1 == "rut SI es valido" && res2 == "nombre SI es valido"){
-                    registrado(); 
+        function resp_fetch(){ 
+            return fetch('duplicado.php', {
+                method: 'POST',
+                body: datos
+            })
+            .then( res => res.json())
+            .then( data => {
+                // console.log(data);
+                if(data === 'duplicado' && registrar.value=='Registrar'){
+                    respuesta.innerHTML = `<div>El rut ingresado ya existe</div>`
+                    rut.style.backgroundColor = "red";
+                    console.log("el rut ya existe");
+                    return "rut SI duplicado";
+                }else if(data === 'duplicado' && registrar.value=='Actualizar'){
+                    respuesta.innerHTML = `<div></div>`
+                    return "rut actualizar ok";
+                    // registrado(); 
+                }else if(data === 'dato ok'){
+                    respuesta.innerHTML = `<div></div>`
+                    return "rut registrar ok";
+                    // registrado(); 
                 }
-                // registrado(); 
-            }else if(data === 'dato ok'){
-                respuesta.innerHTML = `<div></div>`
-                if(res1 == "rut SI es valido" && res2 == "nombre SI es valido"){
-                    registrado(); 
-                }
-                
-                // registrado(); 
-            }
 
-        })
+            })  // end fetch
+            
+        } // end resp_fetch  
+
+        async function respuesta_fetch(){
+            var res = await resp_fetch();
+            console.log("funcion asincrona: "+res);
+            if(res=="rut registrar ok" && res2 == "nombre SI es valido"){
+                registrado();
+            }
+            
+        }
+        respuesta_fetch();
+
+    
+       
        
 
-    }  
+    }  // end if
+
+   
+    
    
 
-});
+}); // end event clic
+
+/* if(res1 == "rut SI es valido" && res2 == "nombre SI es valido"){
+    return "rut SI es valido"
+} */
 
 
 
