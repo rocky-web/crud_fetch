@@ -81,7 +81,7 @@
                 </div>
                 <div>
                     <label for="patente">Patente</label>
-                    <input type="text" name="patente" id="patente" placeholder="Patente (opcional)">
+                    <input type="text" name="patente" id="patente" placeholder="Patente (opcional)" maxlength="6">
                     <div id="msje_pat"></div>
                 </div>
                 <div>

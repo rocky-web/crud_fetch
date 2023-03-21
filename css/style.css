@@ -97,32 +97,6 @@
     color: blue;
 }
 
-/* Formulario registro usuarios */
-.formulario-registro-usuario{
-    border: 2px solid;
-    border-color: black;
-    border-radius: 15px;
-    background-color: rgb(175, 175, 175);
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 30px;
-    margin-top: 25px;
-    width: 370px;
-}
-
-.labels{
-    margin-top: 7px;
-    margin-bottom: 7px;
-}
-
-.labels label{
-    display: block;
-
-}
-.labels input{
-    margin-bottom: 10px;
-}
-
 /* mensaje echo php de registro usuario */
 .msje_reg_usu{
     color: red;

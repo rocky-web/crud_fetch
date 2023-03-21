@@ -22,28 +22,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style3.css">
     <title>Registro de usuario</title>
 </head>
 <body class="fondo">
-<h2>Registro de usuario</h2>
-<form action="registro.php" method="post" id="frm" autocomplete="off" class="formulario-registro-usuario">
-    <p>Seleccione usuario de tipo: Invitado o Administrador</p>
-    <div>
-        <label for="inv">Invitado</label>
-        <input type="radio" name="tipo_usuario" id="inv" value="invitado" checked>
-        <label for="adm">Administrador</label>
-        <input type="radio" name="tipo_usuario" id="adm" value="administrador">
-    </div>
-    <div class="labels">
-        <label for="nom_usu">Nombre usuario: </label>
-        <input type="text" name="nombre_registro" id="nom_usu">
-        <label for="con_1">Contraseña: </label>
-        <input type="password" name="contrasena_registro" id="con_1">
-        <label for="con_2">Repita contraseña: </label>
-        <input type="password" name="contrasena_registro_2" id="con_2">
-    </div>
-    <button type="submit">Registrar</button>
-</form>
+
+<div class="div1">
+    <form action="registro.php" method="post" id="frm" autocomplete="off" class="formulario-registro-usuario">
+        <div class="div2">
+            <h2>Registro de usuario</h2>
+            <div>
+                <p>Seleccione usuario de tipo: Invitado o Administrador</p>
+                <label for="inv">Invitado</label>
+                <input type="radio" name="tipo_usuario" id="inv" value="invitado" checked>
+                <label for="adm">Administrador</label>
+                <input type="radio" name="tipo_usuario" id="adm" value="administrador">
+            </div>
+            <div class="div3">
+                <label for="nom_usu">Nombre usuario: </label>
+                <input type="text" name="nombre_registro" id="nom_usu">
+                <label for="con_1">Contraseña: </label>
+                <input type="password" name="contrasena_registro" id="con_1">
+                <label for="con_2">Repita contraseña: </label>
+                <input type="password" name="contrasena_registro_2" id="con_2">
+                <button type="submit">Registrar</button>
+            </div>
+        </div>
+        
+    </form>
+</div>
 
 
     
