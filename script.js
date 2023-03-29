@@ -72,7 +72,7 @@ function Eliminar(id) {
         }
     })
 }
-function Editar(id) {
+function Editar() {
     fetch("editar.php", {
         method: "POST",
         body: id

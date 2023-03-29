@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST)) {
+if (isset($_POST['id'])) {
     $autorizado = $_POST['autorizado'];
     $rut = $_POST['rut'];
     $nombre = $_POST['nombre'];

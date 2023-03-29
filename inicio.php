@@ -39,9 +39,6 @@
             <form action="" method="post" id="frm" class="formulario-registro-contratistas" autocomplete="off">
                 <h2 class="titulo2">Registro de personas</h2>
                
-                <div>
-                    <input type="hidden" name="idp" id="idp" value="">
-                </div>
 
                 <div id="respuesta"></div>
 
@@ -132,7 +129,6 @@
 
     <script src="script.js"></script>
     <script src="script2.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     
 </body>
 
